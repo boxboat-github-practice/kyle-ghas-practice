@@ -16,9 +16,9 @@ Code scanning enables developers to integrate security analysis tooling into the
 
 #### Enabling code scanning
 
-1. On the `Security` tab, in the **Vulnerability alerts** section, click **Code scanning**, and then click the **Configure scanning tool** button. 
+1. On the `Security` tab, in the **Vulnerability alerts** section, click **Code scanning**, click **Add scanning tool**, then searach for **CodeQL Analysis** and then click the **Configure** button. 
 
-2. Review the created Action workflow file `codeql-analysis.yml` and choose `Start commit` to accept the default proposed workflow.
+2. Review the created Action workflow file `codeql.yml` **Note: this may be referred to as codeql-analysis.yml in documentation as well** and choose `Start commit` to accept the default proposed workflow.
 
 3. Head over to the `Actions` tab to see the created workflow in action. Click on the workflow to view details and status for each analysis job.
 
@@ -34,7 +34,7 @@ CodeQL requires a build of compiled languages. An analysis job can fail if our *
     <details>
     <summary>Solution</summary>
 
-    - GitHub saves workflow files in the `.github/workflows` directory of your repository. You can add a command to the existing `codeql-analysis.yml` workflow to output the Java version.  Add this anywhere before the step that is failing to help in your debugging:
+    - GitHub saves workflow files in the `.github/workflows` directory of your repository. You can add a command to the existing `codeql.yml` workflow to output the Java version.  Add this anywhere before the step that is failing to help in your debugging:
 
     ```yaml
     - run: |
@@ -44,7 +44,7 @@ CodeQL requires a build of compiled languages. An analysis job can fail if our *
 
     </details>
 
-3. The previous debugging has concluded that we have a mismatch.  Resolve the JDK version issue by using the `setup-java` Action in `codeql-analysis.yml` to explicitly specify a version.  This should be added to the workflow before the `autobuild` step to properly configure the runtime environment before the build.
+3. The previous debugging has concluded that we have a mismatch.  Resolve the JDK version issue by using the `setup-java` Action in `codeql.yml` to explicitly specify a version.  This should be added to the workflow before the `autobuild` step to properly configure the runtime environment before the build.
 
     <details>
     <summary>Solution</summary>
