@@ -10,7 +10,7 @@
 To participate in the workshop you need a GitHub account and need to be invited to the workshop organization [ghas-bootcamp](https://github.com/ghas-bootcamp). If your repository hasn't been automatically created in the workshop organization, either click `Use this template` and create a repository under this organization, or create a new repository and push a copy of the `ghas-bootcamp` repository to an organization with GHAS enabled.
 
 ```bash
-git clone https://github.com/ghas-bootcamp/ghas-bootcamp.git
+git clone https://github.com/boxboat-demo/ghas-bootcamp.git
 cd ghas-bootcamp
 git remote set-url origin git@github.com:{org-or-username}/{repo-name}.git
 ```
